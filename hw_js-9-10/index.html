@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="js/jquery.bxslider.js"></script>
+	<script type="text/javascript" src="js/jquery.selectbox-0.6.1.js"></script>
+	<link rel="stylesheet" href="css/jquery.bxslider.css">
+	<link rel="stylesheet" type="text/css" media="all" href="css/jquery.selectbox.css" />
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="wrapper">
+
+		<!-- Start menu -->
+			<div id="menu">
+			<ul>
+				<li><a href="#">Nav 1</a></li>
+				<li><a href="#">Nav 2</a></li>
+				<li class="menu__item"><a href="#">Nav 3</a><span class="menu__item-main"></span>
+					<ul class="sub-menu">
+						<li><a href="#">Nav 3.1</a></li>
+						<li><a href="#">Nav 3.2</a></li>
+						<li><a href="#">Nav 3.3</a></li>
+						<li class="menu__item"><a href="#">Nav 3.4</a><span class="menu__item-sub"></span>
+							<ul class="sub-menu">
+								<li><a href="#">Nav 3.4.1</a></li>
+								<li><a href="#">Nav 3.4.2</a></li>
+								<li><a href="#">Nav 3.4.3</a></li>
+								<li><a href="#">Nav 3.4.4</a></li>
+								<li><a href="#">Nav 3.4.5</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Nav 3.5</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Nav 4</a></li>
+				<li><a href="#">Nav 5</a></li>
+			</ul>
+		</div>
+		<!-- End menu -->
+
+		<!-- Start slider -->
+		<div class="container">
+			<ul class="bxslider">
+			  <li class="bxslider__item"><img src="images/img1.jpg" style="width: 100%; height: 400px"alt="picture" /></li>
+			  <li class="bxslider__item"><img src="images/img2.jpg" style="width: 100%; height: 400px"alt="picture" /></li>
+			  <li class="bxslider__item"><img src="images/img3.jpg" style="width: 100%; height: 400px"alt="picture" /></li>
+			  <li class="bxslider__item"><img src="images/img4.jpg" style="width: 100%; height: 400px"alt="picture" /></li>
+			  <li class="bxslider__item"><img src="images/img5.jpg" style="width: 100%; height: 400px"alt="picture" /></li>
+			  <li class="bxslider__item"><img src="images/img6.jpg" style="width: 100%; height: 400px"alt="picture" /></li>
+			  <li class="bxslider__item"><img src="images/sl-4.jpg" style="width: 100%; height: 400px"alt="picture" /></li>
+			</ul>
+		</div>
+		<!-- End slider -->
+
+		<!-- Start select -->
+		<form method = "POST" id="select">
+		    <select id="select__item">
+		        <option selected value = "Какие имена вам нравятся?">Какие имена вам нравятся?</option>
+		        <option value = "Никакие">Никакие</option>
+		        <option value = "Иван">Иван</option>
+		        <option value = "Петр">Петр</option>
+		        <option value = "Николай">Николай</option>
+		        <option value = "Николай">Николай</option>
+		        <option value = "Николай">Николай</option>
+		        <option value = "Николай">Николай</option>
+		        <option value = "Николай">Николай</option>
+		        <option value = "Николай">Николай</option>
+		        <option value = "Николай">Николай</option>
+		        <option value = "Николай">Николай</option>
+		        <option value = "Николай">Николай</option>
+		        <option value = "Николай">Николай</option>
+		        <option value = "Николай">Николай</option>
+		        <option value = "Николай">Николай</option>
+		        <option value = "Николай">Николай</option>
+
+		    </select>
+		</form>
+		<!-- End select -->
+
+		<!-- Start checkbox JQuery -->
+		<div class="check">
+			<div>
+			<label for="ch1">label 1</label>
+			<input type="checkbox" class="niceCheck" id="ch1" tabindex="1" /> 
+		</div>
+		<div>
+			<label for="ch2">label 2</label>
+			<input type="checkbox" class="niceCheck" checked="checked" id="ch2" tabindex="2" value="2" />
+		</div>
+		<div>
+			<label for="ch3">label 3</label>
+			<input type="checkbox" class="niceCheck" id="ch3" checked="checked" disabled="disabled" />
+		</div>
+		</div>
+		<!-- End checkbox JQuery -->
+
+		<!-- Start checkbox css -->
+		<div class="check_css">
+			<div>
+				<input type="checkbox" id="test-check1" />
+				<label for="test-check1">Чекбокс 1:</label>
+			</div>
+			<div>
+				<input type="checkbox" id="test-check2" />
+				<label for="test-check2">Чекбокс 2:</label>
+			</div>
+		</div>
+
+		<!-- End checkbox css -->
+		
+		<!-- Start JQuery scripts -->
+
+		<!-- Start scrypt for slider -->
+		<script>
+			$(document).ready(function(){
+			  $('.bxslider').bxSlider({
+			  	 auto: true
+			  });
+			});
+		</script>
+		<!-- End scrypt for slider -->
+
+		<!-- Start scrypt for select -->
+		<script>
+			$(document).ready(function(){
+				$("#select").selectbox();
+			});
+		</script>
+		<!-- End scrypt for select -->
+		
+		<!-- Start script for checkbox -->
+		<script>
+			$(document).ready(function() {
+				$(".niceCheck").each(function() {
+			     changeCheckStart($(this));
+				});
+		      });
+			function changeCheck(el){
+				var el = el,
+					input = el.find("input").eq(0);
+					  
+				if(el.attr("class").indexOf("niceCheckDisabled")==-1)
+				{	
+			   		if(!input.attr("checked")) {
+						el.addClass("niceChecked");
+						input.attr("checked", true);
+					} else {
+						el.removeClass("niceChecked");
+						input.attr("checked", false).focus();
+					}
+				}
+			    return true;
+			}
+			function changeVisualCheck(input) {
+				var wrapInput = input.parent();
+					if(!input.attr("checked")) {
+						wrapInput.removeClass("niceChecked");
+					}
+					else
+					{
+						wrapInput.addClass("niceChecked");
+					}
+			}
+			function changeCheckStart(el) {
+				try {
+					var el = el,
+						checkName = el.attr("name"),
+						checkId = el.attr("id"),
+						checkChecked = el.attr("checked"),
+						checkDisabled = el.attr("disabled"),
+						checkTab = el.attr("tabindex"),
+					    checkValue = el.attr("value");
+						if(checkChecked)
+							el.after("<span class='niceCheck niceChecked'>"+
+								"<input type='checkbox'"+
+								"name='"+checkName+"'"+
+								"id='"+checkId+"'"+
+								"checked='"+checkChecked+"'"+
+					            "value='"+checkValue+"'"+
+								"tabindex='"+checkTab+"' /></span>");
+						else
+							el.after("<span class='niceCheck'>"+
+								"<input type='checkbox'"+
+								"name='"+checkName+"'"+
+								"id='"+checkId+"'"+
+					             "value='"+checkValue+"'"+
+								"tabindex='"+checkTab+"' /></span>");
+								
+						if(checkDisabled)
+						{
+							el.next().addClass("niceCheckDisabled");
+							el.next().find("input").eq(0).attr("disabled","disabled");
+						}
+							
+						el.next().bind("mousedown", function(e) { changeCheck($(this)) });
+						el.next().find("input").eq(0).bind("change", function(e) { changeVisualCheck($(this)) });
+						if(jQuery.browser.msie)
+						{
+							el.next().find("input").eq(0).bind("click", function(e) { changeVisualCheck($(this)) });	
+						}
+						el.remove();
+					}
+				catch(e){}
+
+				    return true;
+				}
+		</script>
+		<!-- End script for checkbox -->
+
+		<!-- Start script for dropmenu -->
+		<script>
+			$(document).ready(function() {
+			    $( '.menu__item').hover(
+			        function(){
+			            $(this).children('.sub-menu').slideDown(200);
+			        },
+			        function(){
+			            $(this).children('.sub-menu').slideUp(200);
+			        }
+			    );
+			});
+		</script>
+		<!-- End script for dropmenu -->
+
+		<!-- End JQuery scripts -->
+	</div>
+</body>
+</html>

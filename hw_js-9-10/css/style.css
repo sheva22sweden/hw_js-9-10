@@ -1,0 +1,141 @@
+/*basic styles*/
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	body {
+		background-color: #f9f7f7;
+	}
+	.wrapper {
+		max-width: 1000px;
+		margin: 0 auto;
+		background-color: #dddbdb;
+	}
+/*styles for slider*/
+	.container {
+		width: 650px;
+		margin: 0 auto;
+	}
+/*styles for select*/
+	#select {
+		width: 170px;
+	}
+/*styles for checkbox JQuery*/
+	.niceCheck {
+		width: 17px;
+		height: 17px;
+		display: inline-block;
+		cursor: pointer;
+		background: url(../images/checkbox-sprite.png);
+		overflow: hidden;
+	}
+	.niceChecked {
+		background-position: 0 -17px;
+	}
+	.niceCheck input {
+		margin-left: -100px;
+	}
+	.niceCheckDisabled {
+		background-image: url(../images/checkbox-sprite.png);
+		opacity: 0.5;
+	}
+	.check {
+		background-color: #99ccff;
+		width: 900px;
+		padding: 20px 50px;
+		margin-top: 90px;
+	}
+/*styles for checkbox css*/
+	.check_css input[type=checkbox] {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+	}
+	.check_css label {
+	   cursor: pointer;
+	}
+	.check_css label:after {
+	   content: " ";
+	   display: inline-block;
+	   width: 16px;
+	   height: 16px;
+	   background: url(../images/spritesheet.png);
+	   position: relative;
+	   top: 3px;
+		margin-left: 15px;
+	}
+	.check_css input[type=checkbox]:checked + label:after {
+	   background-position: 1px 1px;
+	}
+	.check_css label:after {
+	   background-position: 0 -16px;
+
+	}
+	/*input[type=checkbox]:checked + label:hover:after {
+	   background-position: 0 -32px;
+	}*/
+	.check_css {
+		margin: 20px;
+		padding-bottom: 90px;
+	}
+
+	/*styles for menu*/
+	#menu {
+		height: 46px;
+		width: 100%;
+		background-color: #ff6464;
+		margin-bottom: 30px;
+	
+	}
+	.menu ul {
+		font-size: 0px;
+	}
+	#menu ul li {
+		float: left;
+		padding: 13px 25px;
+		list-style: none;
+		position: relative;
+		font-size: 16px;
+
+	}
+	#menu ul li a {
+		text-decoration: none;
+		color: #fff;
+		font-family: Arial;
+	}
+	#menu ul li a:hover {
+		color: #000;
+	}
+	#menu ul ul {
+		background-color: #e14b4b;
+		width: 200px;
+		position: absolute;
+		top: 46px;
+		left: 0;
+		display: none;
+		z-index: 999;
+	}
+	#menu ul ul li {
+		float: none;
+		border-bottom: 1px solid #c83232;
+		padding: 13px;
+	}
+	.menu__item-main::after {
+		content: '▼ ';
+		color: #fff;
+		font-size: 8px;
+		padding-left: 5px;
+	}
+	.menu__item-sub::after {
+		content: '▶ ';
+		color: #fff;
+		font-size: 8px;
+		margin-left: 105px;
+	}
+	#menu ul ul li:last-child {
+		border-bottom: 0;
+	}
+	#menu ul ul ul {
+		position: absolute;
+		top: 0;
+		left: 200px;
+	}
