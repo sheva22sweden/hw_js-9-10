@@ -211,18 +211,18 @@
 		<!-- End script for checkbox -->
 
 		<!-- Start script for dropmenu -->
-		<script>
-			$(document).ready(function() {
-			    $( '.menu__item').hover(
-			        function(){
-			            $(this).children('.sub-menu').slideDown(200);
-			        },
-			        function(){
-			            $(this).children('.sub-menu').slideUp(200);
-			        }
-			    );
-			});
-		</script>
+		  <script>
+            $(document).ready(function() {
+                $( '.menu__item').hover(
+                    function(){
+                        $(this).children('.sub-menu').stop().slideDown(200);
+                    },
+                    function(){
+                        $(this).children('.sub-menu').stop().slideUp(200);
+                    }
+                );
+            });
+        </script>
 		<!-- End script for dropmenu -->
 
 		<!-- End JQuery scripts -->
